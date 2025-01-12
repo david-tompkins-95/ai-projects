@@ -1,5 +1,13 @@
 import requests as r
 import os
+import json
+### Data Needed
+# business_status
+# name
+# opening_hours.open_now
+# price_level
+# rating
+# user_ratings_total
 
 def makeReq(tmp_dir, key, keyword, radius, lat, long):
     # Ensure the directory exists
@@ -10,6 +18,7 @@ def makeReq(tmp_dir, key, keyword, radius, lat, long):
     # Make request for google apis
     res = r.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword={}&location={},{}&radius={}&key={}".format(keyword, lat, long, radius, key))
     # Write JSON to file
+    # res = json.loads(res.text)
     with open(filepath_json, "w", encoding="utf-8") as text_file:
         text_file.write(res.text)
     print("File Written")

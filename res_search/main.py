@@ -11,9 +11,10 @@
 # Built By David M. Tompkins. 
 import os
 from res_search.goog_api.map_interactor import makeReq
+from res_search.utils.data_control import create_csv
 
 def main():
-    key = ""
+    key = "AIzaSyBwF8CSFpQUQBtnk7hNNQlx38eFw6836Rk"
     keyword = "Restaurants"
     radius = "50000"
     lat = 33.1983
@@ -24,7 +25,7 @@ def main():
     # Absolute path to chatbot/util/tmp
     tmp_dir = os.path.join(project_root, "res_search", "utils", "tmp")
     makeReq(tmp_dir, key, keyword, radius, lat, long)
-    # create_csv()
+    data = create_csv(tmp_dir)
     return 0
 
 if __name__ == '__main__':
