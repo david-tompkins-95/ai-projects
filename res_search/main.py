@@ -14,7 +14,7 @@ from res_search.goog_api.map_interactor import makeReq
 from res_search.utils.data_control import create_csv
 
 def main():
-    key = "AIzaSyBwF8CSFpQUQBtnk7hNNQlx38eFw6836Rk"
+    key = ""
     keyword = "Restaurants"
     radius = "50000"
     lat = 33.1983
