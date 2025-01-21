@@ -15,17 +15,17 @@ from res_search.utils.data_control import create_csv
 
 def main():
     key = ""
-    keyword = "Restaurants"
+    keyword = "Bar"
     radius = "50000"
-    lat = 33.1983
-    long = -96.614456
+    lat =  29.749907
+    long = -95.358421
     print("Making Request")
     # Get the root directory of the project
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     # Absolute path to chatbot/util/tmp
     tmp_dir = os.path.join(project_root, "res_search", "utils", "tmp")
     makeReq(tmp_dir, key, keyword, radius, lat, long)
-    data = create_csv(tmp_dir)
+    create_csv(tmp_dir)
     return 0
 
 if __name__ == '__main__':

@@ -25,7 +25,6 @@ def makeReq(tmp_dir, key, keyword, radius, lat, long):
 
     # Loop through each object in the list to extract required fields
     for item in res:
-        print(item)
         filtered_item = {key: item[key] for key in ['business_status', 'name', 'price_level', 'rating', 'user_ratings_total'] if key in item}
         filtered_res.append(filtered_item)
 
