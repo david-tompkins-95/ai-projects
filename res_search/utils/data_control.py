@@ -1,11 +1,11 @@
 import pandas as pd
 import os
 
-def create_csv(tmp_dir):
+def create_csv(tmp_dir, city):
     # Assuming 'res.json' is your JSON file
     # Define file paths
     filename = "res.json"
-    filename_csv = "output.csv"
+    filename_csv = f"{city}_output.csv"
     filepath = os.path.join(tmp_dir, filename)
     data = pd.read_json(filepath)
     data.to_csv(os.path.join(tmp_dir, filename_csv), index=False)

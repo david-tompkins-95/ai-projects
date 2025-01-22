@@ -1,12 +1,6 @@
 import requests as r
 import os
 import json
-### Data Needed
-# business_status
-# name
-# price_level
-# rating
-# user_ratings_total
 
 def makeReq(tmp_dir, key, keyword, radius, lat, long):
     # Ensure the directory exists
@@ -22,7 +16,6 @@ def makeReq(tmp_dir, key, keyword, radius, lat, long):
         res = res['results']
     # Create a list to hold the filtered results
     filtered_res = []
-
     # Loop through each object in the list to extract required fields
     for item in res:
         filtered_item = {key: item[key] for key in ['business_status', 'name', 'price_level', 'rating', 'user_ratings_total'] if key in item}
@@ -30,13 +23,11 @@ def makeReq(tmp_dir, key, keyword, radius, lat, long):
 
     # Convert the filtered list back to JSON
     res_json = json.dumps(filtered_res, ensure_ascii=False)
-
     # Writing to the file
     with open(filepath_json, "w", encoding="utf-8") as text_file:
         text_file.write(res_json)
 
     print("File Written")
-
 
 def test_speech():
     text = "test"
