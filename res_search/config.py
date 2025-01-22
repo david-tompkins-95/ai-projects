@@ -1,9 +1,6 @@
 import os
 from dotenv import load_dotenv
 
-### Cities
-# McKinney, Prosper, Selina, Frisco, Little Elm
-
 load_dotenv()
 
 class Config:
