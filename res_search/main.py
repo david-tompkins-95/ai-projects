@@ -21,8 +21,6 @@ def main():
         print(city)
         if(city == "McKinney"):
             makeReq(tmp_dir, config.API_KEY, config.KEYWORD, config.RADIUS, config.LAT_MCKINNEY, config.LONG_MCKINNEY)
-        elif(city == "Prosper"):
-            makeReq(tmp_dir, config.API_KEY, config.KEYWORD, config.RADIUS, config.LAT_PROSPER, config.LONG_PROSPER)
         elif(city == "Celina"):
             makeReq(tmp_dir, config.API_KEY, config.KEYWORD, config.RADIUS, config.LAT_CELINA, config.LONG_CELINA)
         elif(city == "Frisco"):
